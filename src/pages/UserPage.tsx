@@ -2,7 +2,7 @@ import React from "react";
 import { Paper } from "@material-ui/core";
 import "./UserPage.css";
 import TableList from "../components/TableList";
-import { USERS } from "../data/users";
+import { useAppSelector } from "../constants/hooks";
 
 const UserLabels = [
   { id: "name", label: "Name" },
@@ -11,9 +11,11 @@ const UserLabels = [
 ];
 
 function UserPage() {
+  const users = useAppSelector(state => state.users.arr)
+
   return (
     <Paper className="page-container">
-      <TableList data={USERS} title="Users" rows={UserLabels} />
+      <TableList data={users} title="Users" rows={UserLabels} />
     </Paper>
   );
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import { Paper } from "@material-ui/core";
-import { BOOKS } from "../data/users";
 import "./UserPage.css";
 import TableList from "../components/TableList";
+import { useAppSelector } from "../constants/hooks";
 
 const BookLabels = [
   { id: "title", label: "Title" },
@@ -15,9 +15,11 @@ const BookLabels = [
 ];
 
 function BookPage() {
+  const books = useAppSelector(state => state.books.arr)
+
   return (
     <Paper className="page-container">
-      <TableList data={BOOKS} title="Books" rows={BookLabels} />
+      <TableList data={books} title="Books" rows={BookLabels} />
     </Paper>
   );
 }

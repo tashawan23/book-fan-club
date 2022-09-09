@@ -1,0 +1,13 @@
+.home-container {
+    flex-direction: column;
+    display: flex;
+    background-color: aliceblue;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.title {
+    color: #403f3e;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

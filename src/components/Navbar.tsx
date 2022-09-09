@@ -11,7 +11,7 @@ function Navbar() {
     }
 
     const goToUsers = () => {
-        navigate('/')
+        navigate('/users')
     }
 
     const goToBooks = () => {

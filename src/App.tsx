@@ -1,21 +1,28 @@
-import './App.css';
-import UserPage from './pages/UserPage';
+import "./App.css";
+import UserPage from "./pages/UserPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from './components/Navbar';
-import BookPage from './pages/BookPage';
+import Navbar from "./components/Navbar";
+import BookPage from "./pages/BookPage";
+import AnalyticsPage from "./pages/AnalyticsPage";
+import { Provider } from "react-redux";
+import { store } from "./constants/store"
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <Router>
-       <Navbar/>
-      <div className="App">
-      <Routes>
-      <Route path="/" element={<UserPage />}/>
-      <Route path="/books" element={<BookPage />}/>
-      {/* <Route path="/analytics" element={<AnalyticsPage />}/> */}
-     </Routes>
-    </div>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <div className="App">
+          <Routes>
+          <Route path="/" element={<HomePage />} />
+            <Route path="/users" element={<UserPage />} />
+            <Route path="/books" element={<BookPage />} />
+            <Route path="/analytics" element={<AnalyticsPage />} />
+          </Routes>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
