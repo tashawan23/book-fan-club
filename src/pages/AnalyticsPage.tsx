@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import "./AnalyticsPage.css";
 
-const AnalyticsPage = () => {
+const BooksByGenre = () => {
+
   return (
-    <div>AnalyticsPage</div>
-  )
-}
+    <div>
+        <BooksByGenre/>
+    </div>
+  );
+};
 
-export default AnalyticsPage
+export default BooksByGenre;

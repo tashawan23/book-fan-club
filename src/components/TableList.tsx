@@ -97,7 +97,6 @@ function TableList(props: { data: any; title: String; rows: any[] }) {
   const getSorting = (order: string, orderBy: any) => {
     return order === 'desc' ? (a: any, b: any) => -ascending(a, b, orderBy) : (a: any, b: any) => ascending(a, b, orderBy);
   }
-  console.log(order)
 
   return (
     <div className="content-area">
