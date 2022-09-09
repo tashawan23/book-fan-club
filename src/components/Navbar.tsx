@@ -14,6 +14,10 @@ function Navbar() {
         navigate('/')
     }
 
+    const goToBooks = () => {
+        navigate('/books')
+    }
+
   return (
     <div className='nav-bar'>
         <div className='nav-name'>
@@ -26,7 +30,7 @@ function Navbar() {
         <Button onClick={() => goToUsers()} style={{color: 'white', fontSize: '15px', marginRight: '20px'}}>
             Users
         </Button>
-        <Button onClick={() => goToUsers()} style={{color: 'white', fontSize: '15px', marginRight: '20px'}}>
+        <Button onClick={() => goToBooks()} style={{color: 'white', fontSize: '15px', marginRight: '20px'}}>
             Books
         </Button>
         </div>

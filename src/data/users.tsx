@@ -19,39 +19,40 @@ export const USERS = [{id: 1, name: "Anna Tan", role: "Member", joinDate: "12/01
 {id: 17, name: "Benny Paul", role: "Member", joinDate: "13/11/2021"}]
 
 enum GENRE {
-    Romance,
-    Action,
-    Adventure,
-    Thriller,
-    Fiction,
-    History,
-    Travel,
-    Lifestyle,
-    Fantasy,
-    ScienceFiction,
-    Poetry
+    Romance = "Romance",
+    Action = "Action",
+    Adventure = "Adventure",
+    Thriller = "Thriller",
+    Fiction = "Fiction",
+    History = "History",
+    Travel = "Travel",
+    Lifestyle = "Lifestyle",
+    Fantasy = "Fantasy",
+    ScienceFiction = "ScienceFiction",
+    Poetry = "Poetry"
 }
 
 enum BOOK_STATUS {
-    Borrowed,
-    Available
+    Borrowed = "Borrowed",
+    Available = "Available"
 }
 
 export const BOOKS = [
-    {title: "My Dear Secretary", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Romance, author: "Agnese Orred", year_published: "1993", status: BOOK_STATUS.Available, last_borrower: "Emyle Iamittii"},
-    {title: "Ignition", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.ScienceFiction, author: "Josy Coomer", year_published: "1990", status: BOOK_STATUS.Available, last_borrower: "Juliet Well"},
-    {title: "Hellboy", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Amata Dubois", year_published: "1983", status: BOOK_STATUS.Available, last_borrower: "Ashton Pill"},
-    {title: "Acts of Worship", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Gisela Powton", year_published: "1978", status: BOOK_STATUS.Available, last_borrower: "Anna Tan"},
-    {title: "Mother Earth", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Travel, author: "Daryl Phebee", year_published: "1999", status: BOOK_STATUS.Borrowed, last_borrower: "Emyle Iamittii"},
-    {title: "Phantasm", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Fantasy, author: "Mayer Benam", year_published: "1989", status: BOOK_STATUS.Available, last_borrower: "Ashton Pill"},
-    {title: "Double Tide", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Romance, author: "Nollie Fice", year_published: "1987", status: BOOK_STATUS.Borrowed, last_borrower: "Emyle Iamittii"},
-    {title: "Soap and Water", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Lifestyle, author: "Em Tysall", year_published: "1997", status: BOOK_STATUS.Borrowed, last_borrower: "Anna Tan"},
-    {title: "Whole Wide World", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Travel, author: "Agnese Orred", year_published: "1993", status: BOOK_STATUS.Available, last_borrower: "Emyle Iamittii"},
-    {title: "America's Sweethearts", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Josy Coomer", year_published: "1990", status: BOOK_STATUS.Available, last_borrower: "Juliet Well"},
-    {title: "Blood Moon", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Amata Dubois", year_published: "1978", status: BOOK_STATUS.Available, last_borrower: "Ashton Pill"},
-    {title: "Identity", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.ScienceFiction, author: "Gisela Powton", year_published: "1973", status: BOOK_STATUS.Available, last_borrower: "Anna Tan"},
-    {title: "Innocent Lies", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Romance, author: "Daryl Phebee", year_published: "1989", status: BOOK_STATUS.Borrowed, last_borrower: "Emyle Iamittii"},
-    {title: "For Pete's Sake", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Lifestyle, author: "Mayer Benam", year_published: "1985", status: BOOK_STATUS.Available, last_borrower: "Ashton Pill"},
-    {title: "Alice", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Thriller, author: "Nollie Fice", year_published: "1982", status: BOOK_STATUS.Borrowed, last_borrower: "Emyle Iamittii"},
-    {title: "Border", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Adventure, author: "Em Tysall", year_published: "1990", status: BOOK_STATUS.Borrowed, last_borrower: "Anna Tan"},
+    {id: 1, title: "My Dear Secretary", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Romance, author: "Agnese Orred", year_published: "1993", status: BOOK_STATUS.Available, last_borrower: "Emyle Iamittii"},
+    {id: 2, title: "My Dear Secretary", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Romance, author: "Agnese Orred", year_published: "1993", status: BOOK_STATUS.Available, last_borrower: "Emyle Iamittii"},
+    {id: 3, title: "Ignition", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.ScienceFiction, author: "Josy Coomer", year_published: "1990", status: BOOK_STATUS.Available, last_borrower: "Juliet Well"},
+    {id: 4, title: "Hellboy", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Amata Dubois", year_published: "1983", status: BOOK_STATUS.Available, last_borrower: "Ashton Pill"},
+    {id: 5, title: "Acts of Worship", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Gisela Powton", year_published: "1978", status: BOOK_STATUS.Available, last_borrower: "Anna Tan"},
+    {id: 6, title: "Mother Earth", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Travel, author: "Daryl Phebee", year_published: "1999", status: BOOK_STATUS.Borrowed, last_borrower: "Emyle Iamittii"},
+    {id: 7, title: "Phantasm", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Fantasy, author: "Mayer Benam", year_published: "1989", status: BOOK_STATUS.Available, last_borrower: "Ashton Pill"},
+    {id: 8, title: "Double Tide", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Romance, author: "Nollie Fice", year_published: "1987", status: BOOK_STATUS.Borrowed, last_borrower: "Emyle Iamittii"},
+    {id: 9, title: "Soap and Water", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Lifestyle, author: "Em Tysall", year_published: "1997", status: BOOK_STATUS.Borrowed, last_borrower: "Anna Tan"},
+    {id: 10, title: "Whole Wide World", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Travel, author: "Agnese Orred", year_published: "1993", status: BOOK_STATUS.Available, last_borrower: "Emyle Iamittii"},
+    {id: 11, title: "America's Sweethearts", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Josy Coomer", year_published: "1990", status: BOOK_STATUS.Available, last_borrower: "Juliet Well"},
+    {id: 12, title: "Blood Moon", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Amata Dubois", year_published: "1978", status: BOOK_STATUS.Available, last_borrower: "Ashton Pill"},
+    {id: 13, title: "Identity", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.ScienceFiction, author: "Gisela Powton", year_published: "1973", status: BOOK_STATUS.Available, last_borrower: "Anna Tan"},
+    {id: 14, title: "Innocent Lies", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Romance, author: "Daryl Phebee", year_published: "1989", status: BOOK_STATUS.Borrowed, last_borrower: "Emyle Iamittii"},
+    {id: 15, title: "For Pete's Sake", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Lifestyle, author: "Mayer Benam", year_published: "1985", status: BOOK_STATUS.Available, last_borrower: "Ashton Pill"},
+    {id: 16, title: "Alice", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Thriller, author: "Nollie Fice", year_published: "1982", status: BOOK_STATUS.Borrowed, last_borrower: "Emyle Iamittii"},
+    {id: 17, title: "Border", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Adventure, author: "Em Tysall", year_published: "1990", status: BOOK_STATUS.Borrowed, last_borrower: "Anna Tan"},
 ]
