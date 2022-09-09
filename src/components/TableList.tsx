@@ -7,30 +7,48 @@ import {
   TableRow,
   TableFooter,
   TablePagination,
+  Tooltip,
+  TableSortLabel,
 } from "@material-ui/core";
 import TableHeader from "../components/TableHeader";
 import "../pages/UserPage.css";
 import UserTableBody from "./UserTableBody";
 import BookTableBody from "./BookTableBody";
 
-function TableList(props: { data: any; title: String; labels: string[] }) {
-  const { data, title, labels } = props;
+function TableList(props: { data: any; title: String; rows: any[] }) {
+  const { data, title, rows } = props;
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [listData, setListData] = useState(data);
   const [selected, setSelected] = useState<number[]>([]);
+  const [order, setOrder] = useState<"asc" | "desc">("asc");
+  const [orderBy, setOrderBy] = useState("name");
 
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent> | null,
     newPage: number
   ) => {
     setPage(newPage);
-    console.log(newPage);
   };
 
   const handleChangeRowsPerPage = (event: any) => {
     setRowsPerPage(event.target.value);
     setPage(0);
+  };
+
+  const handleSort = (event: any, property: React.SetStateAction<string>) => {
+    const orderBy = property;
+    let newOrder: "asc" | "desc" = "desc";
+
+    if (orderBy === property && order === "desc") {
+      newOrder = "asc";
+    }
+    setOrder(newOrder);
+    setOrderBy(property);
+  };
+
+  const sortBy = (property: any) => (event: any) => {
+    handleSort(event, property);
   };
 
   const onSelect = (event: any | null, id: number) => {
@@ -76,6 +94,11 @@ function TableList(props: { data: any; title: String; labels: string[] }) {
     return temp.map((el: any[]) => el[0]);
   };
 
+  const getSorting = (order: string, orderBy: any) => {
+    return order === 'desc' ? (a: any, b: any) => -ascending(a, b, orderBy) : (a: any, b: any) => ascending(a, b, orderBy);
+  }
+  console.log(order)
+
   return (
     <div className="content-area">
       <TableHeader numSelected={selected.length} title={title} />
@@ -84,8 +107,18 @@ function TableList(props: { data: any; title: String; labels: string[] }) {
           <TableHead>
             <TableRow>
               <TableCell />
-              {labels.map((label) => (
-                <TableCell className="table-header">{label}</TableCell>
+              {rows.map((item) => (
+                <TableCell className="table-header">
+                  <Tooltip title="Sort" enterDelay={300}>
+                    <TableSortLabel
+                      active={orderBy === item.id}
+                      direction={order}
+                      onClick={sortBy(item.id)}
+                    >
+                      {item.label}
+                    </TableSortLabel>
+                  </Tooltip>
+                </TableCell>
               ))}
             </TableRow>
           </TableHead>
@@ -97,7 +130,9 @@ function TableList(props: { data: any; title: String; labels: string[] }) {
               onSelect={onSelect}
               selected={selected}
               sortData={sortData}
-              ascending={ascending}
+              getSorting={getSorting}
+              order={order}
+              orderBy={orderBy}
             />
           ) : (
             <BookTableBody
@@ -107,7 +142,9 @@ function TableList(props: { data: any; title: String; labels: string[] }) {
               onSelect={onSelect}
               selected={selected}
               sortData={sortData}
-              ascending={ascending}
+              getSorting={getSorting}
+              order={order}
+              orderBy={orderBy}
             />
           )}
           <TableFooter>
