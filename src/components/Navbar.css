@@ -1,0 +1,16 @@
+.nav-bar {
+    background-color: #656665;
+    align-items: center;
+    min-height: 80px;
+    padding-right: 100px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 80px;
+}
+
+.nav-name {
+    font-size: 17px;
+}

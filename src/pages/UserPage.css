@@ -1,0 +1,33 @@
+.page-container {
+    min-width: 950;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.table-header {
+    font-weight: bold;
+    color: black;
+}
+
+.avatar-badge {
+    background-color: #52acfa;
+    color: white;
+}
+
+.name {
+    font-weight: bold;
+    color: #48494a;
+}
+
+.table {
+    min-width: 950,
+}
+
+.table-container {
+    border-radius: 10;
+    margin: '10px 10px';
+    max-width: 950;
+}

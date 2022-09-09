@@ -1,0 +1,21 @@
+.tool-bar {
+    min-width: 950px;
+}
+
+.basic-bar {
+    min-width: 950px;
+}
+
+.space {
+    flex: '1 1 100%';
+}
+
+.highlight-bar {
+    background-color:  #ffe3ec;
+    min-width: 950px;
+}
+
+.selected-word {
+    color: #f71647;
+    font-weight: bold;
+}
