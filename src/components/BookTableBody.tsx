@@ -1,98 +1,86 @@
 import React from "react";
-import {
-  TableBody,
-  TableCell,
-  TableRow,
-  Typography,
-  Checkbox,
-} from "@material-ui/core";
+import { createTheme, makeStyles } from "@material-ui/core";
 import "./TableBody.css";
 import { useAppSelector } from "../constants/hooks";
+import { DataGrid } from "@mui/x-data-grid";
+
+const defaultTheme = createTheme();
+const useStyles = makeStyles(
+  (theme) => ({
+    root: {
+      border: 0,
+      color:
+        theme.palette.type === "light"
+          ? "rgba(0,0,0,.85)"
+          : "rgba(255,255,255,0.85)",
+      fontFamily: [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        '"Segoe UI"',
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(","),
+      WebkitFontSmoothing: "auto",
+      letterSpacing: "normal",
+      "& .MuiDataGrid-columnsContainer": {
+        backgroundColor: "#e3b1f2",
+      },
+      "& .MuiDataGrid-iconSeparator": {
+        display: "none",
+      },
+      "& .MuiDataGrid-columnHeader, .MuiDataGrid-cell": {
+        borderRight: `1px solid ${
+          theme.palette.type === "light" ? "#f0f0f0" : "#303030"
+        }`,
+      },
+      "& .MuiDataGrid-columnsContainer, .MuiDataGrid-cell": {
+        borderBottom: `1px solid ${
+          theme.palette.type === "light" ? "#f0f0f0" : "#303030"
+        }`,
+      },
+      "& .MuiDataGrid-cell": {
+        color:
+          theme.palette.type === "light"
+            ? "rgba(0,0,0,.85)"
+            : "rgba(255,255,255,0.65)",
+      },
+      "& .MuiPaginationItem-root": {
+        borderRadius: 0,
+      },
+    },
+  }),
+  { defaultTheme }
+);
 
 function BookTableBody(props: {
   data: any;
-  page: number;
   rowsPerPage: number;
-  selected: number[];
-  onSelect: any;
-  sortData: any;
-  getSorting: any;
-  order: any;
-  orderBy: any;
+  columns: any;
+  handleChangeRowsPerPage: any;
 }) {
-  const {
-    data,
-    page,
-    rowsPerPage,
-    selected,
-    onSelect,
-    sortData,
-    getSorting,
-    order,
-    orderBy,
-  } = props;
+  const { data, rowsPerPage, columns, handleChangeRowsPerPage } = props;
   const isAdmin = useAppSelector((state) => state.login.isAdmin);
   const isEditor = useAppSelector((state) => state.login.isEditor);
+  const classes = useStyles();
 
   return (
-    <TableBody>
-      {sortData(data, getSorting(order, orderBy))
-        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-        .map(
-          (row: {
-            id: number;
-            name: string;
-            title: string;
-            description: string;
-            genre: string;
-            author: string;
-            year_published: string;
-            status: string;
-            last_borrower: string;
-          }) => {
-            const isRowSelected = selected.indexOf(row.id) > -1;
-            return (
-              <TableRow
-                hover={isAdmin || isEditor}
-                onClick={(event) =>
-                  isAdmin ? onSelect(event, row.id) : undefined
-                }
-              >
-                {isAdmin || isEditor ? (
-                  <TableCell>
-                    <Checkbox checked={isRowSelected} />
-                  </TableCell>
-                ) : (
-                  <TableCell />
-                )}
-                <TableCell>
-                  <Typography className="name">{row.title}</Typography>
-                </TableCell>
-                <TableCell width="20%">
-                  <Typography color="primary" variant="subtitle2">
-                    {row.description}
-                  </Typography>
-                </TableCell>
-                <TableCell>{row.genre}</TableCell>
-                <TableCell>{row.author}</TableCell>
-                <TableCell>{row.year_published}</TableCell>
-                <TableCell>
-                  <Typography
-                    className={
-                      row.status === "Borrowed"
-                        ? "borrowed-status"
-                        : "available-status"
-                    }
-                  >
-                    {row.status}
-                  </Typography>
-                </TableCell>
-                <TableCell>{row.last_borrower}</TableCell>
-              </TableRow>
-            );
-          }
-        )}
-    </TableBody>
+    <div style={{ height: 700, width: "90%", alignSelf: "center" }}>
+      <DataGrid
+        className={classes.root}
+        rows={data}
+        columns={columns}
+        checkboxSelection={isAdmin || isEditor}
+        rowsPerPageOptions={[10, 20, 25]}
+        pagination
+        pageSize={rowsPerPage}
+        onPageSizeChange={(newSize) => handleChangeRowsPerPage(newSize)}
+      />
+    </div>
   );
 }
 

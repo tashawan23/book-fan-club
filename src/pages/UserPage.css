@@ -1,33 +1,50 @@
 .page-container {
-    min-width: 950;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 50px;
+  /* min-width: 950px; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  margin-top: 80px;
+  /* margin-right: 40px;
+    margin-left: 40px; */
+  height: 900px;
+  width: 100%;
 }
 
 .table-header {
-    font-weight: bold;
-    color: black;
+  font-weight: bold;
+  color: black;
 }
 
 .avatar-badge {
-    background-color: #52acfa;
-    color: white;
+  background-color: #52acfa;
+  color: white;
 }
 
 .name {
-    font-weight: bold;
-    color: #48494a;
+  font-weight: bold;
+  color: #48494a;
 }
 
 .table {
-    min-width: 950,
+  min-width: 950;
 }
 
 .table-container {
-    border-radius: 10;
-    margin: '10px 10px';
-    max-width: 950;
+  border-radius: 10;
+  margin: "10px 10px";
+  max-width: 950;
+}
+
+.content-area {
+  height: 900px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.column-header {
+    background-color: #e3e3e3;
 }

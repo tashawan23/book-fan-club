@@ -1,22 +1,21 @@
 import React from "react";
-import { Paper } from "@material-ui/core";
 import "./UserPage.css";
 import TableList from "../components/TableList";
 import { useAppSelector } from "../constants/hooks";
 
 const UserLabels = [
-  { id: "name", label: "Name" },
-  { id: "role", label: "Role" },
-  { id: "date_joined", label: "Date Joined" },
+  { field: "name", headerName: "Name", minWidth: 300, headerClassName:'column-header' },
+  { field: "role", headerName: "Role", minWidth: 250, headerClassName:'column-header' },
+  { field: "joinDate", headerName: "Date Joined", minWidth: 250, headerClassName:'column-header' },
 ];
 
 function UserPage() {
   const users = useAppSelector(state => state.users.arr)
 
   return (
-    <Paper className="page-container">
+    <div className="page-container">
       <TableList data={users} title="Users" rows={UserLabels} />
-    </Paper>
+    </div>
   );
 }
 

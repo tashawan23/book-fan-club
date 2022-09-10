@@ -7,6 +7,7 @@ import AnalyticsPage from "./pages/AnalyticsPage";
 import { Provider } from "react-redux";
 import { store } from "./constants/store"
 import HomePage from "./pages/HomePage";
+import TestTable from "./pages/TestTable";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/users" element={<UserPage />} />
             <Route path="/books" element={<BookPage />} />
             <Route path="/analytics" element={<AnalyticsPage />} />
+            <Route path="/test" element={<TestTable />} />
           </Routes>
         </div>
       </Router>

@@ -1,8 +1,25 @@
 .charts-container {
     width: 900px;
-    height: 900px;
+    height: 700px;
+    background-color: white;
+    padding-top: 40px;
+    border-radius: 20px;
+    margin-top: 50px;
 }
 
 .chart-name {
     font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.analytics-page {
+    background-color: #ededed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    flex-direction: column;
 }
