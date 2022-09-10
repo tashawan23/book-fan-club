@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../pages/UserPage.css";
 import UserTableBody from "./UserTableBody";
 import BookTableBody from "./BookTableBody";
+import AddToolbar from "./AddToolbar";
+import Form from "./Form";
 
 function TableList(props: { data: any; title: String; rows: any[] }) {
   const { data, title, rows } = props;
@@ -14,6 +16,8 @@ function TableList(props: { data: any; title: String; rows: any[] }) {
 
   return (
     <div className="content-area">
+      <AddToolbar />
+      <Form fields={rows} />
       {title === "Users" ? (
         <UserTableBody
           rowsPerPage={rowsPerPage}

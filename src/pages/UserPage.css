@@ -1,13 +1,10 @@
 .page-container {
-  /* min-width: 950px; */
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
-  margin-top: 80px;
-  /* margin-right: 40px;
-    margin-left: 40px; */
+  margin-top: 20px;
   height: 900px;
   width: 100%;
 }
@@ -40,11 +37,19 @@
 .content-area {
   height: 900px;
   width: 100%;
-  align-items: center;
   justify-content: center;
   display: flex;
+  flex-direction: column;
 }
 
 .column-header {
     background-color: #e3e3e3;
+}
+
+.borrowed-status {
+    color: #bf170b;
+}
+
+.available-status {
+    color: #089914;
 }

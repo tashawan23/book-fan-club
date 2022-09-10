@@ -1,20 +1,24 @@
-export const USERS = [{id: 1, name: "Anna Tan", role: "Member", joinDate: "12/01/2021"},
-{id: 2, name: "Jamie Rozario", role: "Editor", joinDate: "01/01/2021"},
-{id: 3, name: "Ashton Pill", role: "Member", joinDate: "11/10/2021"},
-{id: 4, name: "Juliet Well", role: "Member", joinDate: "02/04/2022"},
-{id: 5, name: "Ronald Michael", role: "Admin", joinDate: "22/07/2021"},
-{id: 6, name: "Julie Rachel", role: "Editor", joinDate: "01/01/2021"},
-{id: 7, name: "Aaron Smith", role: "Member", joinDate: "11/10/2021"},
-{id: 8, name: "Sue Wills", role: "Member", joinDate: "02/04/2022"},
-{id: 9, name: "Ronny Mitchel", role: "Admin", joinDate: "22/07/2021"},
-{id: 10, name: "Janelle Boyle", role: "Editor", joinDate: "26/02/2021"},
-{id: 11, name: "Aydon Kelly", role: "Editor", joinDate: "19/01/2022"},
-{id: 12, name: "Tessa Smith", role: "Member", joinDate: "05/04/2022"},
-{id: 13, name: "Therese Michael", role: "Member", joinDate: "22/03/2021"},
-{id: 14, name: "Riley Bonson", role: "Editor", joinDate: "19/09/2021"},
-{id: 15, name: "Anston Small", role: "Member", joinDate: "26/03/2021"},
-{id: 16, name: "Willy Mills", role: "Member", joinDate: "27/02/2022"},
-{id: 17, name: "Benny Paul", role: "Member", joinDate: "13/11/2021"}]
+import {
+    randomCreatedDate,
+  } from '@mui/x-data-grid-generator';
+
+export const USERS = [{id: 1, name: "Anna Tan", role: "Member", joinDate:  randomCreatedDate()},
+{id: 2, name: "Jamie Rozario", role: "Editor", joinDate: randomCreatedDate()},
+{id: 3, name: "Ashton Pill", role: "Member", joinDate: randomCreatedDate()},
+{id: 4, name: "Juliet Well", role: "Member", joinDate: randomCreatedDate()},
+{id: 5, name: "Ronald Michael", role: "Admin", joinDate: randomCreatedDate()},
+{id: 6, name: "Julie Rachel", role: "Editor", joinDate: randomCreatedDate()},
+{id: 7, name: "Aaron Smith", role: "Member", joinDate: randomCreatedDate()},
+{id: 8, name: "Sue Wills", role: "Member", joinDate: randomCreatedDate()},
+{id: 9, name: "Ronny Mitchel", role: "Admin", joinDate: randomCreatedDate()},
+{id: 10, name: "Janelle Boyle", role: "Editor", joinDate: randomCreatedDate()},
+{id: 11, name: "Aydon Kelly", role: "Editor", joinDate: randomCreatedDate()},
+{id: 12, name: "Tessa Smith", role: "Member", joinDate: randomCreatedDate()},
+{id: 13, name: "Therese Michael", role: "Member", joinDate: randomCreatedDate()},
+{id: 14, name: "Riley Bonson", role: "Editor", joinDate: randomCreatedDate()},
+{id: 15, name: "Anston Small", role: "Member", joinDate: randomCreatedDate()},
+{id: 16, name: "Willy Mills", role: "Member", joinDate: randomCreatedDate()},
+{id: 17, name: "Benny Paul", role: "Member", joinDate: randomCreatedDate()}]
 
 enum GENRE {
     Romance = "Romance",

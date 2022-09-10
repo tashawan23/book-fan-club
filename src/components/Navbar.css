@@ -13,3 +13,32 @@
 .nav-name {
     font-size: 17px;
 }
+
+.toolbar-container {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: left;
+    left: 0;
+}
+
+.record-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+    background-color: #ededed;
+    padding: 40px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+}
+
+.input-box {
+    margin-bottom: 10px;
+    height: 25px;
+}
+
+.action-container {
+    display: flex;
+    justify-content: end;
+}

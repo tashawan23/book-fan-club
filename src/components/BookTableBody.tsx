@@ -3,6 +3,8 @@ import { createTheme, makeStyles } from "@material-ui/core";
 import "./TableBody.css";
 import { useAppSelector } from "../constants/hooks";
 import { DataGrid } from "@mui/x-data-grid";
+import AddToolbar from "./AddToolbar";
+import { DataGridPro, useGridApiRef } from "@mui/x-data-grid-pro";
 
 const defaultTheme = createTheme();
 const useStyles = makeStyles(
@@ -67,6 +69,7 @@ function BookTableBody(props: {
   const isAdmin = useAppSelector((state) => state.login.isAdmin);
   const isEditor = useAppSelector((state) => state.login.isEditor);
   const classes = useStyles();
+  const apiRef = useGridApiRef();
 
   return (
     <div style={{ height: 700, width: "90%", alignSelf: "center" }}>
