@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Cell, LabelList, Legend, Pie, PieChart, ResponsiveContainer } from "recharts";
+import { Cell, LabelList, Pie, PieChart, ResponsiveContainer } from "recharts";
 import { useAppSelector } from "../constants/hooks";
 import "../pages/AnalyticsPage.css";
 

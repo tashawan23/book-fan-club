@@ -1,17 +1,13 @@
 import { Button } from "@mui/material";
-import AddIcon from '@material-ui/icons/Add';
-import { GridApiRef, GridToolbarContainer } from "@mui/x-data-grid-pro";
-import "./Navbar.css"
+import AddIcon from "@material-ui/icons/Add";
+import "./Navbar.css";
 
-function AddToolbar() {
-
-  const handleClick = () => {
-    console.log('here')
-  };
+function AddToolbar(props: { onClick: any }) {
+  const { onClick } = props;
 
   return (
     <div className="toolbar-container">
-      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
+      <Button color="primary" startIcon={<AddIcon />} onClick={onClick}>
         Add new record
       </Button>
     </div>

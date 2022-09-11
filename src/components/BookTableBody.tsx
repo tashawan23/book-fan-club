@@ -3,8 +3,6 @@ import { createTheme, makeStyles } from "@material-ui/core";
 import "./TableBody.css";
 import { useAppSelector } from "../constants/hooks";
 import { DataGrid } from "@mui/x-data-grid";
-import AddToolbar from "./AddToolbar";
-import { DataGridPro, useGridApiRef } from "@mui/x-data-grid-pro";
 
 const defaultTheme = createTheme();
 const useStyles = makeStyles(
@@ -60,24 +58,23 @@ const useStyles = makeStyles(
 );
 
 function BookTableBody(props: {
-  data: any;
   rowsPerPage: number;
   columns: any;
   handleChangeRowsPerPage: any;
 }) {
-  const { data, rowsPerPage, columns, handleChangeRowsPerPage } = props;
+  const { rowsPerPage, columns, handleChangeRowsPerPage } = props;
   const isAdmin = useAppSelector((state) => state.login.isAdmin);
   const isEditor = useAppSelector((state) => state.login.isEditor);
+  const books = useAppSelector((state) => state.books.arr);
   const classes = useStyles();
-  const apiRef = useGridApiRef();
 
   return (
     <div style={{ height: 700, width: "90%", alignSelf: "center" }}>
       <DataGrid
         className={classes.root}
-        rows={data}
+        rows={books}
         columns={columns}
-        checkboxSelection={isAdmin || isEditor}
+        checkboxSelection
         rowsPerPageOptions={[10, 20, 25]}
         pagination
         pageSize={rowsPerPage}

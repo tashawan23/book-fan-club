@@ -1,5 +1,6 @@
+import { randomCreatedDate } from '@mui/x-data-grid-generator';
 import { createSlice } from '@reduxjs/toolkit'
-import { USERS } from '../data/users'
+import { USERS } from '../data/data'
 
 export const userSlice = createSlice({
   name: 'users',
@@ -8,7 +9,10 @@ export const userSlice = createSlice({
   },
   reducers: {
     addUser: (state, action) => {
-      state.arr = state.arr.concat(action.payload)
+      let user = {...action.payload}
+      user.id = state.arr.length + 1;
+      user.joinDate = randomCreatedDate()
+      state.arr = state.arr.concat(user)
     }
   }
 })

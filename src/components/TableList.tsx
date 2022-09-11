@@ -3,32 +3,47 @@ import "../pages/UserPage.css";
 import UserTableBody from "./UserTableBody";
 import BookTableBody from "./BookTableBody";
 import AddToolbar from "./AddToolbar";
-import Form from "./Form";
+import UserForm from "./UserForm";
+import BookForm from "./BookForm";
+import { useAppSelector } from "../constants/hooks";
 
-function TableList(props: { data: any; title: String; rows: any[] }) {
-  const { data, title, rows } = props;
+function TableList(props: { title: String; rows: any[] }) {
+  const { title, rows } = props;
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [listData, setListData] = useState(data);
+  const [showAdd, setShowAdd] = useState(false);
+  const isAdmin = useAppSelector((state) => state.login.isAdmin);
+  const isEditor = useAppSelector((state) => state.login.isEditor);
 
   const handleChangeRowsPerPage = (newSize: number) => {
     setRowsPerPage(newSize);
   };
 
+  const onClickAdd = () => {
+    setShowAdd(true);
+  };
+
+  const onCloseModal = () => {
+    setShowAdd(false);
+  };
+
   return (
     <div className="content-area">
-      <AddToolbar />
-      <Form fields={rows} />
+      {showAdd &&
+        (title === "Users" ? (
+          <UserForm onCloseModal={() => onCloseModal()} />
+        ) : (
+          <BookForm onCloseModal={() => onCloseModal()} />
+        ))}
+      {(isAdmin || (isEditor && title === "Books")) && (<AddToolbar onClick={() => onClickAdd()} />)}
       {title === "Users" ? (
         <UserTableBody
           rowsPerPage={rowsPerPage}
-          data={listData}
           columns={rows}
           handleChangeRowsPerPage={handleChangeRowsPerPage}
         />
       ) : (
         <BookTableBody
           rowsPerPage={rowsPerPage}
-          data={listData}
           columns={rows}
           handleChangeRowsPerPage={handleChangeRowsPerPage}
         />

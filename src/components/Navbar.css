@@ -1,7 +1,7 @@
 .nav-bar {
     background-color:  #1b52bf;
     align-items: center;
-    min-height: 80px;
+    height: 80px;
     padding-right: 100px;
     padding-left: 60px;
     display: flex;
@@ -20,6 +20,7 @@
     justify-content: flex-start;
     align-self: left;
     left: 0;
+    margin-bottom: 20px;
 }
 
 .record-form {
@@ -27,18 +28,40 @@
     flex-direction: column;
     width: 50%;
     align-self: center;
-    background-color: #ededed;
-    padding: 40px;
+    background-color: white;
+    padding: 60px;
     padding-bottom: 30px;
     border-radius: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.modal-container {
+    background-color: rgba(52, 52, 52, 0.8);
+    display: flex;
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    top: 80px;
 }
 
 .input-box {
     margin-bottom: 10px;
-    height: 25px;
+    height: 30px;
 }
 
 .action-container {
     display: flex;
     justify-content: end;
+}
+
+.form-title {
+    color: #1b52bf;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-bottom: 20px;
 }

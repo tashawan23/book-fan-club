@@ -3,9 +3,7 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
-  margin-top: 20px;
-  height: 900px;
+  height: 100vh;
   width: 100%;
 }
 
@@ -35,21 +33,31 @@
 }
 
 .content-area {
-  height: 900px;
+  height: 100vh;
   width: 100%;
   justify-content: center;
   display: flex;
   flex-direction: column;
 }
 
+.modal-area {
+  z-index: 2;
+  height: 900px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #48494a;
+}
+
 .column-header {
-    background-color: #e3e3e3;
+  background-color: #e3e3e3;
 }
 
 .borrowed-status {
-    color: #bf170b;
+  color: #bf170b;
 }
 
 .available-status {
-    color: #089914;
+  color: #089914;
 }

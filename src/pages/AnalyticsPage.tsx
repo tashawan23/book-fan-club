@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import BooksByDate from "../components/BooksByDate";
 import BooksGenre from "../components/BooksByGenre";
 import "./AnalyticsPage.css";

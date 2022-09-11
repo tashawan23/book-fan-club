@@ -1,33 +1,38 @@
 import React from "react";
 import "./UserPage.css";
 import TableList from "../components/TableList";
-import { useAppSelector } from "../constants/hooks";
 import RowToolEditor from "../components/RowToolEditor";
-
-const UserLabels = [
-  { field: "name", headerName: "Name", minWidth: 300, headerAlign: "center", editable: true },
-  { field: "role", headerName: "Role", minWidth: 250, headerAlign: "center", editable: true },
-  { field: "joinDate", type: 'date', headerName: "Date Joined", minWidth: 250, headerAlign: "center", align: "center", editable: true },
-  {
-    field: "actions",
-    headerName: "Actions",
-    renderCell: RowToolEditor,
-    sortable: false,
-    width: 120,
-    headerAlign: "center",
-    filterable: false,
-    align: "center",
-    disableColumnMenu: true,
-    disableReorder: true,
-  },
-];
+import { useAppSelector } from "../constants/hooks";
 
 function UserPage() {
-  const users = useAppSelector(state => state.users.arr)
+  const isAdmin = useAppSelector((state) => state.login.isAdmin);
+
+  const UserLabels = [
+    { field: "name", headerName: "Name", minWidth: 300, headerAlign: "center", editable: isAdmin },
+    { field: "role", headerName: "Role", minWidth: 250, headerAlign: "center", editable: isAdmin },
+    { field: "joinDate", type: 'date', headerName: "Date Joined", minWidth: 250, headerAlign: "center", align: "center", editable: isAdmin },
+    {
+      field: "actions",
+      headerName: "Actions",
+      renderCell: RowToolEditor,
+      sortable: false,
+      width: 120,
+      headerAlign: "center",
+      filterable: false,
+      align: "center",
+      disableColumnMenu: true,
+      disableReorder: true,
+    },
+  ];
+
+  let columnLabels = [...UserLabels]
+  if (!isAdmin) {
+    columnLabels.splice(UserLabels.length - 1, 1)
+  }
 
   return (
     <div className="page-container">
-      <TableList data={users} title="Users" rows={UserLabels} />
+      <TableList title="Users" rows={columnLabels}/>
     </div>
   );
 }
