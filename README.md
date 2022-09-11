@@ -27,7 +27,7 @@ To Run the application:
 
 
 ## Project File Structure 
-* Project is separated into:
+Project is separated into:
 1. Pages - Book and User management pages and Analytics page
 2. Components - Charts and table components
 3. Constants - Redux Slices and store 
