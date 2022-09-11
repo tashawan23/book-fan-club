@@ -34,14 +34,14 @@ enum GENRE {
     Poetry = "Poetry"
 }
 
-enum BOOK_STATUS {
+export enum BOOK_STATUS {
     Borrowed = "Borrowed",
     Available = "Available"
 }
 
 export const BOOKS = [
     {id: 1, title: "My Dear Secretary", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Romance, author: "Agnese Orred", year_published: "1993", status: BOOK_STATUS.Available, last_borrower: "Emyle Iamittii"},
-    {id: 2, title: "My Dear Secretary", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Action, author: "Agnese Orred", year_published: "1993", status: BOOK_STATUS.Available, last_borrower: "Aaron Smith"},
+    {id: 2, title: "Timescape", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.Action, author: "Agnese Orred", year_published: "1993", status: BOOK_STATUS.Available, last_borrower: "Aaron Smith"},
     {id: 3, title: "Ignition", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.ScienceFiction, author: "Josy Coomer", year_published: "1990", status: BOOK_STATUS.Available, last_borrower: "Juliet Well"},
     {id: 4, title: "Hellboy", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Amata Dubois", year_published: "1983", status: BOOK_STATUS.Available, last_borrower: "Ashton Pill"},
     {id: 5, title: "Acts of Worship", description: "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.", genre: GENRE.History, author: "Gisela Powton", year_published: "1978", status: BOOK_STATUS.Available, last_borrower: "Anna Tan"},

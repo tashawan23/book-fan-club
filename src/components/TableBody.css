@@ -1,7 +1,12 @@
 .borrowed-status {
     color: #bf170b;
+    background-color: #f0f0f0;
 }
 
 .available-status {
     color: #089914;
+}
+
+.borrowed-row {
+    background-color: #f0f0f0;
 }

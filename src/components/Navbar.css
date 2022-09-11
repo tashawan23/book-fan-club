@@ -65,3 +65,19 @@
     align-self: flex-start;
     margin-bottom: 20px;
 }
+
+.borrow-button {
+    background-color: #1b52bf;
+    color: white;
+    padding: 7px;
+    border-radius: 25px;
+    font-size: 11px;
+    cursor: pointer;
+}
+.borrow-button:hover {
+    background-color: #ffd83d;
+}
+
+.borrowed-cell {
+    visibility: hidden;
+}

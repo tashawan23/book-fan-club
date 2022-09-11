@@ -1,5 +1,4 @@
 import { GridApi, GridRowId } from "@mui/x-data-grid";
-import AddIcon from "@material-ui/icons/Add";
 import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/DeleteOutlined";
@@ -30,7 +29,6 @@ const useStyles = makeStyles(
 function RowToolEditor(props: RowMenuProps) {
   const { api, id } = props;
   const classes = useStyles();
-  const isInEditMode = api.getRowMode(id) === "edit";
   const [isEditMode, setIsEditMode] = useState(false);
 
   const handleEditClick = (event: { stopPropagation: () => void; }) => {
@@ -40,7 +38,6 @@ function RowToolEditor(props: RowMenuProps) {
   };
 
   const handleSaveClick = (event: { stopPropagation: () => void; }) => {
-    console.log(event)
     event.stopPropagation();
     api.setRowMode(id, "view");
     setIsEditMode(false);

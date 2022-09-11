@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { BOOKS } from "../data/data";
+import { BOOKS, BOOK_STATUS } from "../data/data";
 
 export const bookSlice = createSlice({
   name: "books",
@@ -10,13 +10,23 @@ export const bookSlice = createSlice({
     addBook: (state, action) => {
       let book = { ...action.payload };
       book.id = state.arr.length + 1;
-      book.status = "Available"
+      book.status = "Available";
       state.arr = state.arr.concat(book);
+    },
+
+    borrowBook: (state, action) => {
+      let temp = [...state.arr];
+      temp = temp.map((book) => {
+        return book.id === action.payload
+          ? { ...book, status: BOOK_STATUS.Borrowed }
+          : book
+      });
+      state.arr = temp;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addBook } = bookSlice.actions;
+export const { addBook, borrowBook } = bookSlice.actions;
 
 export default bookSlice.reducer;

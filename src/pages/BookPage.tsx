@@ -3,6 +3,7 @@ import "./UserPage.css";
 import TableList from "../components/TableList";
 import RowToolEditor from "../components/RowToolEditor";
 import { useAppSelector } from "../constants/hooks";
+import BookBorrow from "../components/BookBorrow";
 
 const cellClassRules = {
   "borrowed-status": (params: { value: string }) => params.value === "Borrowed",
@@ -22,6 +23,18 @@ function BookPage() {
     { field: "year_published", headerName: "Year Published", minWidth: 150, editable: isEditor||isAdmin },
     { field: "status", headerName: "Status", minWidth: 150, cellClassRules, editable: isEditor||isAdmin },
     { field: "last_borrower", headerName: "Last Borrower", minWidth: 150, editable: isEditor||isAdmin },
+    {
+      field: "borrow",
+      headerName: "Borrow Book",
+      renderCell: BookBorrow,
+      sortable: false,
+      width: 120,
+      headerAlign: "center",
+      filterable: false,
+      align: "center",
+      disableColumnMenu: true,
+      disableReorder: true,
+    },
     {
       field: "actions",
       headerName: "Actions",
